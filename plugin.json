@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "apex-as-proof",
+  "version": "0.0.1",
+  "description": "Experimental read-only synthetic fixture gap reporter. Not an evidence engine or audit assessment."
+}

@@ -1,0 +1,21 @@
+{
+  "fixtureContract": "apex-as.synthetic-proof/v1",
+  "synthetic": true,
+  "items": [
+    {
+      "id": "demo-design",
+      "label": "Invented design note",
+      "reference": "synthetic:design-note-01"
+    },
+    {
+      "id": "demo-acceptance",
+      "label": "Invented acceptance record",
+      "reference": null
+    },
+    {
+      "id": "demo-platform",
+      "label": "Invented platform-owner record",
+      "reference": null
+    }
+  ]
+}

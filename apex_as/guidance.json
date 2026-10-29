@@ -1,0 +1,362 @@
+{
+  "version": "delivery-guidance/v1",
+  "source": {
+    "url": "https://assetsprod.microsoft.com/en-us/azure-infra-and-db-specialization-audit-checklist.pdf",
+    "observed_version": "V2.0 header / V1.9 Module B heading; unresolved",
+    "window": "2026-07-01 through 2026-12-31",
+    "notice": "Original project-delivery prompts, not copied checklist requirements or an exhaustive control mapping. The observed version discrepancy is unresolved; source-specific interpretations and applicability outside the recorded window need owner clarification. A citation is context, not a partner assessment, Module A waiver, audit-readiness verdict or certification claim. Reuse only explicitly selected, authorized inputs. Missing facts remain PENDING with an owner action; inaccessible prerequisites block only dependent actions. Record actual results only from supplied events with provenance, never from a plan or generated narrative. Document review, factual execution, customer decisions and release are separate; no generated text grants execution, acceptance or disclosure permission."
+  },
+  "artifacts": [
+    {
+      "id": "ART-01",
+      "title": "Project artifact plan",
+      "stage": "D0",
+      "owner_role": "delivery_lead",
+      "capture_point": "At kickoff and each authorized scope change, before choosing documents to create or revise.",
+      "depends_on": [],
+      "source_locator": "Module B: Assess; Module A foundation context for platform interfaces only. Broad context, not exhaustive coverage.",
+      "sections": [
+        {
+          "heading": "Project and workload boundary",
+          "prompt": "At kickoff, the delivery lead records the supplied purpose, included and excluded workloads, infrastructure/database lanes, source/target and environments. Keep missing facts PENDING with a named role and requested input; never add a second workload or customer to fill a gap.",
+          "input_key": "scope"
+        },
+        {
+          "heading": "Selected records to reuse",
+          "prompt": "Before drafting, list only explicitly selected authorized documents with identity, revision, owner, purpose and access state. Propose reference reuse first; distinguish a separate draft from an approved revision. Request a scoped diff review before changing an existing document, and leave inaccessible content PENDING rather than inferring it.",
+          "input_key": "existing_artifacts"
+        },
+        {
+          "heading": "Artifact responsibilities and capture schedule",
+          "prompt": "The delivery lead identifies each useful artifact, its purpose and stage, accountable owner, reviewer, lane/environment, prerequisites, capture event, approved location and needed-by date. Record customer decision ownership separately from the author; unresolved assignments remain PENDING owner actions, not assumed approvals.",
+          "input_key": "artifact_plan"
+        },
+        {
+          "heading": "Platform and external-owner requests",
+          "prompt": "At kickoff, identify the ALZ/platform owner, including external ownership. For each needed record, specify purpose, environment, requested design/configuration/deployment/review material, approved sharing route, needed-by stage, received revision and access/decision state. Ask the owner for real records or a limitation statement; do not deploy anything to close the request.",
+          "input_key": "platform_inputs"
+        },
+        {
+          "heading": "Unknowns and dependent actions",
+          "prompt": "The delivery lead separates missing, inaccessible and disputed inputs, with an action owner, impact and next review point. Mark affected downstream actions blocked where necessary while keeping independent drafting available. Record proposed exceptions for owner decision; do not infer a waiver, partner failure or resolved risk.",
+          "input_key": "risks"
+        },
+        {
+          "heading": "Revision and permitted authoring boundary",
+          "prompt": "Before any write, record selected input/output revisions, allowed new files or revisions, approved processing/location boundary, preview reviewer and intended recipients. At each change, identify affected sections and reviews needing reconfirmation while preserving historical facts. An unprovided authorization or review stays PENDING, not granted by this plan.",
+          "input_key": "revision_actions"
+        }
+      ]
+    },
+    {
+      "id": "ART-02",
+      "title": "Workload assessment output",
+      "stage": "D1",
+      "owner_role": "specialist",
+      "capture_point": "During authorized discovery and when supplied inventory, interview or assessment-output revisions are reviewed.",
+      "depends_on": [
+        "ART-01"
+      ],
+      "source_locator": "Module B: Assess. Broad workload-discovery context, not exhaustive coverage or partner assessment.",
+      "sections": [
+        {
+          "heading": "Observed source baseline",
+          "prompt": "During discovery, the specialist records authorized inventory and assessment-output identities, revisions, observation dates, environments, source systems and the practitioner who supplied them. Separate supplied observations from interview statements and assumptions. Unprovided inventory or tool results remain PENDING; a draft is not proof discovery ran.",
+          "input_key": "inventory"
+        },
+        {
+          "heading": "Dependencies and delivery constraints",
+          "prompt": "The specialist maps supplied application, infrastructure and database dependencies by lane, including data movement, external services, ownership and maintenance constraints. Record how each dependency was identified and who must confirm uncertain links before planning. Do not treat an unobserved dependency as absent.",
+          "input_key": "dependencies"
+        },
+        {
+          "heading": "Sizing and technical constraints",
+          "prompt": "At assessment review, capture supplied capacity, utilization periods, performance/reliability needs, compatibility constraints and required service windows with units and source dates. Separate measured values, requirements and sizing assumptions. Request missing measurements from the responsible specialist; do not invent utilization or recommended sizes.",
+          "input_key": "sizing_constraints"
+        },
+        {
+          "heading": "Migration options, risks and questions",
+          "prompt": "The specialist compares plausible workload migration options against supplied constraints, recording rationale, unresolved compatibility questions, risk impact, mitigation owner and the decision still required. Label proposals and assumptions explicitly; a candidate method is neither a selected design nor authorization to execute.",
+          "input_key": "risks"
+        },
+        {
+          "heading": "Cost and licensing assumptions",
+          "prompt": "Before design handoff, capture supplied pricing/licensing references, currency, estimate date, scope, capacity assumptions, exclusions and who must validate entitlements and costs. Preserve uncertainty and ranges provided by the owner; unknown prices, savings and license eligibility remain PENDING rather than calculated from invented facts.",
+          "input_key": "cost_licensing"
+        },
+        {
+          "heading": "Backup and recovery requirements",
+          "prompt": "During discovery, ask the workload owner for required recovery objectives, retention, recovery dependencies and existing backup/restore records. Distinguish stated requirements from supplied observed recovery events and link their sources. Missing recovery evidence is a PENDING owner request, not proof a backup or restore succeeded.",
+          "input_key": "backup_recovery"
+        }
+      ]
+    },
+    {
+      "id": "ART-03",
+      "title": "Design and decision record",
+      "stage": "D2",
+      "owner_role": "architect",
+      "capture_point": "During design and at each actual architecture, platform or workload-owner review of a named revision.",
+      "depends_on": [
+        "ART-02"
+      ],
+      "source_locator": "Module B: Design; Module A foundation context for ALZ interfaces only. Broad context, not exhaustive coverage.",
+      "sections": [
+        {
+          "heading": "Proposed target design",
+          "prompt": "During design, the architect describes the proposed topology, components, infrastructure/database lanes, environments, data flows and mapping to supplied requirements and assessment findings. Label proposals separately from supplied as-built facts. Leave unresolved target details PENDING rather than presenting a proposed system as deployed.",
+          "input_key": "target_design"
+        },
+        {
+          "heading": "Options and actual design decisions",
+          "prompt": "For each material choice, record options, trade-offs, rationale and responsible decision owner. Attach an actual supplied decision only with actor, date, scope, artifact revision and response reference; otherwise mark the choice proposed or PENDING. A reviewed design does not establish deployment or customer acceptance.",
+          "input_key": "design_decisions"
+        },
+        {
+          "heading": "Security, network and data boundaries",
+          "prompt": "Before design review, the architect requests the responsible owners' requirements for identity/access, connectivity, segmentation, data protection and permitted data movement. Record intended boundaries, interfaces and unresolved approvals by environment. Do not infer implemented controls or authorization from a diagram or requested setting.",
+          "input_key": "security_network"
+        },
+        {
+          "heading": "Capacity, reliability and cost assumptions",
+          "prompt": "The architect connects proposed capacity, availability and recovery choices to supplied measurements, objectives and cost/licensing assumptions. Identify estimate dates, sources, limitations and the owner who must confirm each assumption before planning. Keep missing values PENDING; no savings or resilience outcome is implied.",
+          "input_key": "cost_licensing"
+        },
+        {
+          "heading": "Platform interfaces and external dependencies",
+          "prompt": "At design review, identify the platform/ALZ owner, interface contract, required configuration/design records, received revisions and approved sharing route. Record outstanding owner-specific requests with needed-by stage and affected actions. Keep independent design sections draftable; do not invent external records, acceptance or a Module A exemption.",
+          "input_key": "platform_inputs"
+        },
+        {
+          "heading": "Deviations and review follow-up",
+          "prompt": "The architect records assumptions, deviations from stated requirements, unresolved risks and clarification actions with owners and review dates. Preserve actual review references for the reviewed revision only. When an input changes, identify affected choices for reconfirmation without erasing prior decisions or restamping their approval.",
+          "input_key": "risks"
+        }
+      ]
+    },
+    {
+      "id": "ART-04",
+      "title": "Migration and validation plan",
+      "stage": "D3",
+      "owner_role": "migration_lead",
+      "capture_point": "Before pilot or cutover and whenever the selected design, prerequisites or customer change window changes.",
+      "depends_on": [
+        "ART-03"
+      ],
+      "source_locator": "Module B: Migrate and Validate. Broad preparation context, not exhaustive coverage or execution approval.",
+      "sections": [
+        {
+          "heading": "Waves, windows and prerequisites",
+          "prompt": "Before pilot/cutover, the migration lead lists planned waves, workloads by lane/environment, dependency order, customer windows, action owners, source design revisions and entry/exit conditions. Mark missing prerequisites PENDING with an owner and block only dependent actions. A scheduled window is not permission to run.",
+          "input_key": "migration_waves"
+        },
+        {
+          "heading": "Method, tooling and authorized roles",
+          "prompt": "For each wave, record the proposed migration method/tool, selection rationale, source/target, required access and the practitioner responsible for each step. Identify the separate change approval and go/no-go decision needed. Describe the plan without executing commands or assuming permissions have been granted.",
+          "input_key": "migration_method"
+        },
+        {
+          "heading": "Backup and recoverability preparation",
+          "prompt": "Before the change window, ask the workload owner to identify required backup/restore checks, recovery objectives, retention, capture sources and the owner who verifies prerequisites. Reference supplied historical results as historical only; leave new checks PENDING until an actual supplied event records their outcome.",
+          "input_key": "backup_recovery"
+        },
+        {
+          "heading": "Rollback decision and return path",
+          "prompt": "The migration lead defines rollback triggers, decision authority, time limits, data consistency considerations, recovery sequence, communications and post-rollback checks. Record dependencies and evidence to capture if rollback occurs. This proposed return path is not a tested recovery result or an instruction to initiate rollback.",
+          "input_key": "rollback"
+        },
+        {
+          "heading": "Validation cases and capture checklist",
+          "prompt": "Before execution, the test owner defines cases per lane with expected values/tolerances, test data permissions, environment, timing, responsible practitioner and required run/source references. Include performance, dependency and recovery checks where in scope. Keep observed values and outcomes PENDING until actual test events are supplied.",
+          "input_key": "validation_criteria"
+        },
+        {
+          "heading": "Acceptance request and change control",
+          "prompt": "The migration lead identifies the release scope, acceptance criteria, customer decision owner, request timing, referenced revisions and separate change/go-no-go approval route. Record what must be reconfirmed after material changes. A planned request, unchecked field or generated message is not customer sign-off or release authorization.",
+          "input_key": "acceptance_scope"
+        }
+      ]
+    },
+    {
+      "id": "ART-05",
+      "title": "Execution capture record",
+      "stage": "D4",
+      "owner_role": "executor",
+      "capture_point": "At each actual authorized run or change event, with results added only from explicitly supplied practitioner/tool events.",
+      "depends_on": [
+        "ART-04"
+      ],
+      "source_locator": "Module B: Migrate. Broad execution-record context, not exhaustive coverage or proof a run occurred.",
+      "sections": [
+        {
+          "heading": "Run identity and planned scope",
+          "prompt": "At each actual run, the executor supplies change/run ID, lane, environment, source/target, actual start/end times, actor and referenced plan revision. Separate the intended scope from supplied event facts. With no supplied execution event, keep actual fields PENDING and factual execution not recorded.",
+          "input_key": "execution_notes"
+        },
+        {
+          "heading": "Supplied event and output provenance",
+          "prompt": "The executor identifies each supplied tool output or practitioner event with event/run reference, source identity/revision, capture time, supplier and permitted location. Distinguish actual output from simulations, what-if results and plans. Missing or inaccessible output remains PENDING; do not infer its contents.",
+          "input_key": "execution_sources"
+        },
+        {
+          "heading": "Planned versus observed actions",
+          "prompt": "During run capture, relate planned steps to observations explicitly supplied by the executor, including timestamps and event references. Preserve the difference between an attempted action, an observed result and a verified outcome. Do not turn a narrative, plan status or document review into production success.",
+          "input_key": "execution_observations"
+        },
+        {
+          "heading": "Exceptions and unresolved impact",
+          "prompt": "For supplied execution exceptions, record the observed error or variance, affected workloads/environment, source event, action owner, containment and next review. Preserve contradictory or disputed results with their provenance. A proposed fix is not a resolved defect; unknown impact remains PENDING.",
+          "input_key": "known_issues"
+        },
+        {
+          "heading": "Rollback facts and decision trail",
+          "prompt": "If supplied events describe rollback, record the trigger, actual decision actor/time, affected scope, actions, observed return state and source references. If no such event was supplied, state rollback not recorded rather than claiming it occurred or was unnecessary. Keep planned rollback steps separate.",
+          "input_key": "rollback"
+        },
+        {
+          "heading": "Backup and recovery event capture",
+          "prompt": "Capture backup/restore facts only from supplied actual events, including run/time, workload, observed result and supplier/source. Distinguish a backup completion message from a demonstrated restore and required recovery objectives. Missing checks remain PENDING owner actions; neither plan review nor execution narration proves recoverability.",
+          "input_key": "backup_recovery"
+        }
+      ]
+    },
+    {
+      "id": "ART-06",
+      "title": "Service validation and acceptance request",
+      "stage": "D5",
+      "owner_role": "test_owner",
+      "capture_point": "After supplied execution events, at actual validation runs and when an authentic customer response is supplied.",
+      "depends_on": [
+        "ART-04",
+        "ART-05"
+      ],
+      "source_locator": "Module B: Validate. Broad validation context, not exhaustive coverage or customer sign-off.",
+      "sections": [
+        {
+          "heading": "Cases, criteria and tested scope",
+          "prompt": "Before interpreting results, the test owner identifies planned case IDs, expected values/tolerances, lane/environment, plan revision and executed change/run scope. Record criteria changes and their actual owner decisions separately. Missing criteria stay PENDING; do not select a passing threshold after seeing a result.",
+          "input_key": "validation_criteria"
+        },
+        {
+          "heading": "Observed validation results",
+          "prompt": "After each actual validation run, capture only supplied expected/observed comparisons with case/run ID, timestamp, environment, supplier and source reference. Preserve not-run, unavailable and disputed outcomes distinctly. Blank fields, an execution-success claim or a generated summary are not passing test results.",
+          "input_key": "validation_notes"
+        },
+        {
+          "heading": "Variances, defects and retests",
+          "prompt": "The test owner records observed variances, customer/service impact, defect reference, action owner, proposed remediation and required retest. Add closure only from supplied retest events and preserve earlier outcomes. An unresolved defect or missing retest remains PENDING rather than silently removed from acceptance scope.",
+          "input_key": "known_issues"
+        },
+        {
+          "heading": "Acceptance boundary and current revision",
+          "prompt": "Before sending a request, identify the exact workloads, environments, artifact revisions, validated scope, exclusions and unresolved issues for the customer decision owner. Separate document review from service acceptance. If dependencies changed, mark affected acceptance context as needing reconfirmation; do not reuse an old decision for new scope.",
+          "input_key": "acceptance_scope"
+        },
+        {
+          "heading": "Draft acceptance request",
+          "prompt": "Prepare a request for the authorized customer decision owner referencing current revisions, supplied validation results, limitations, open actions and the decision requested. Mark it DRAFT; sending requires separate scope/recipient review. Do not invent a sent timestamp, signature, response deadline commitment or customer decision.",
+          "input_key": "acceptance_request"
+        },
+        {
+          "heading": "Authentic customer response",
+          "prompt": "Record a decision only from an explicitly supplied authentic response with actual actor, date, decision, scope, referenced artifact revision and permitted response location. Keep rejection, conditions and missing response visible. A draft request, test outcome or blank acceptance form leaves acceptance PENDING or not requested, never accepted.",
+          "input_key": "customer_response"
+        }
+      ]
+    },
+    {
+      "id": "ART-07",
+      "title": "Operational handover",
+      "stage": "D6",
+      "owner_role": "operations_owner",
+      "capture_point": "Before BAU handover and each material change, with acknowledgments added only when authentic responses are supplied.",
+      "depends_on": [
+        "ART-03",
+        "ART-05",
+        "ART-06"
+      ],
+      "source_locator": "Module B: Design and Validate, as context for continuity into operations. Original handover outline, not exhaustive coverage.",
+      "sections": [
+        {
+          "heading": "Current design and as-built differences",
+          "prompt": "Before handover, the operations owner identifies current design and supplied as-built records by revision, lane/environment and source. List observed deviations and unresolved reconciliation actions. Do not relabel a proposed architecture as deployed; unknown current-state facts remain PENDING owner requests.",
+          "input_key": "target_design"
+        },
+        {
+          "heading": "Operational responsibilities and runbooks",
+          "prompt": "The operations owner lists BAU responsibilities, monitoring/alerting, incident/change routes and selected runbook identities/revisions, with owners and verification references where supplied. Distinguish documented procedures from actually verified steps. Request missing operational ownership or verification; do not fabricate working alerts or tested runbooks.",
+          "input_key": "operations"
+        },
+        {
+          "heading": "Backup, recovery and continuity",
+          "prompt": "At handover review, record backup/recovery procedures, objectives, retention and responsible roles from authorized current records. Link actual supplied recovery events separately with dates, scope and outcomes. A runbook is not proof recovery was tested; absent verification remains PENDING with an owner action.",
+          "input_key": "backup_recovery"
+        },
+        {
+          "heading": "Known limitations and open actions",
+          "prompt": "The operations owner carries forward unresolved defects, unsupported assumptions, residual risks, acceptance conditions and blocked prerequisites with impact, action owner and next review date. Record only supplied resolutions and preserve historical findings. Do not treat handover scheduling as closure or customer acceptance.",
+          "input_key": "known_issues"
+        },
+        {
+          "heading": "Support ownership and escalation",
+          "prompt": "Before BAU transfer, request authorized support roles/contact references, service boundaries, escalation route and coverage expectations, including external platform owners. Use only supplied permitted details and avoid credentials or unnecessary personal data. Unconfirmed contacts and responsibilities remain PENDING.",
+          "input_key": "support_contacts"
+        },
+        {
+          "heading": "Recipient review and actual acknowledgment",
+          "prompt": "Before release, review recipient authorization and the exact handover revisions/scope. Record any acknowledgment only from a supplied authentic response with actor, date, scope and response reference. A prepared package is neither delivered nor acknowledged; material revision changes require affected decisions to be reconfirmed.",
+          "input_key": "handover_acknowledgment"
+        }
+      ]
+    },
+    {
+      "id": "ART-08",
+      "title": "Delivery record index",
+      "stage": "D6",
+      "owner_role": "delivery_lead",
+      "capture_point": "At project close and each material artifact, input, decision or release change.",
+      "depends_on": [
+        "ART-01",
+        "ART-02",
+        "ART-03",
+        "ART-04",
+        "ART-05",
+        "ART-06",
+        "ART-07"
+      ],
+      "source_locator": "Module B: Assess, Design, Migrate and Validate, as broad traceability context. Original index, not an audit export or exhaustive mapping.",
+      "sections": [
+        {
+          "heading": "Authorized artifact and source register",
+          "prompt": "At close or material change, the delivery lead indexes only explicitly selected authorized artifacts with IDs, current and parent revisions, lane/environment, owners, approved locations and source/derivative links. Mark unavailable records PENDING; do not discover sibling projects or imply every listed document exists.",
+          "input_key": "artifact_index"
+        },
+        {
+          "heading": "Execution and validation event references",
+          "prompt": "Index factual run/test events only when supplied, with actual event dates, scope, supplier and source links to execution/validation records. Keep planned activities, simulations and document-review states separate. Missing events remain not recorded; an index entry or generated summary cannot establish success.",
+          "input_key": "execution_notes"
+        },
+        {
+          "heading": "Decisions and response provenance",
+          "prompt": "The delivery lead links supplied design reviews, customer decisions and handover acknowledgments to their actor, date, scope, artifact revision and response source. Distinguish requested, pending, rejected and authentic accepted decisions. Do not infer acceptance from tests or apply an earlier response to changed deliverables.",
+          "input_key": "design_decisions"
+        },
+        {
+          "heading": "Changes, freshness and reconfirmation",
+          "prompt": "On each material change, identify changed input/output revisions, impacted sections, stale review context and decisions needing owner reconfirmation. Preserve superseded links and historical execution facts without restamping them. A matching filename or recent timestamp does not prove a record is current or authorized.",
+          "input_key": "revision_actions"
+        },
+        {
+          "heading": "Outstanding actions and limitations",
+          "prompt": "Carry forward missing, inaccessible and disputed inputs, unresolved defects and interpretation questions with scope, responsible role, dependent action and next review date. Keep unknowns explicitly PENDING and record any supplied not-applicable rationale as an owner decision, not a model-inferred waiver or partner verdict.",
+          "input_key": "known_issues"
+        },
+        {
+          "heading": "Permitted release record",
+          "prompt": "Before any release, identify approved artifact revisions, purpose, recipients, sharing route and required scope/recipient review. Record actual release only from supplied events with actor, date and source. A prepared index is not permission or proof of disclosure, an audit submission, project acceptance or certification.",
+          "input_key": "release_scope"
+        }
+      ]
+    }
+  ]
+}

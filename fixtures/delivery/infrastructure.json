@@ -1,0 +1,12 @@
+{
+  "contract": "apex-as.delivery-brief/v1",
+  "synthetic": true,
+  "project_id": "demo-infra-02",
+  "title": "Invented infrastructure-only delivery",
+  "lanes": ["infrastructure"],
+  "environments": ["invented-lab"],
+  "roles": {"delivery_lead": "Invented infrastructure lead", "specialist": "Invented infrastructure specialist"},
+  "alz": {"ownership": "partner", "owner": "Invented platform team", "status": "pending"},
+  "inputs": {"scope": "Invented host relocation only; no database lane.", "inventory": "Host sizing not yet supplied."},
+  "sources": []
+}

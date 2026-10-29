@@ -1,0 +1,12 @@
+{
+  "contract": "apex-as.delivery-brief/v1",
+  "synthetic": true,
+  "project_id": "demo-database-03",
+  "title": "Invented database-only delivery",
+  "lanes": ["database"],
+  "environments": ["invented-test"],
+  "roles": {"delivery_lead": "Invented database lead", "specialist": "Invented database specialist"},
+  "alz": {"ownership": "unknown", "owner": "PENDING: assign platform contact", "status": "unavailable"},
+  "inputs": {"scope": "Invented database migration only.", "inventory": "Dataset size and recovery objectives are not supplied."},
+  "sources": []
+}

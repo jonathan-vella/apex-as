@@ -1,0 +1,38 @@
+{
+  "contract": "apex-as.delivery-brief/v1",
+  "synthetic": true,
+  "project_id": "demo-delivery-01",
+  "title": "Invented application host and database migration",
+  "lanes": ["infrastructure", "database"],
+  "environments": ["invented-test"],
+  "roles": {
+    "delivery_lead": "Invented delivery lead",
+    "specialist": "Invented workload specialist",
+    "architect": "Invented architect",
+    "migration_lead": "Invented migration lead",
+    "executor": "Invented executor",
+    "test_owner": "Invented test owner",
+    "operations_owner": "Invented operations owner",
+    "customer_owner": "Invented customer decision role",
+    "platform_owner": "Invented external platform role"
+  },
+  "alz": {
+    "ownership": "external",
+    "owner": "Invented external platform role",
+    "status": "pending"
+  },
+  "inputs": {
+    "scope": "Invented application host and database, one test environment; no production event has occurred.",
+    "inventory": "Two invented workload components. Sizing and tool inventory are pending.",
+    "dependencies": "Invented application calls invented database. Confirm connection and recovery dependencies.",
+    "risks": "External platform information not supplied. Owner request is required before dependent cutover.",
+    "target_design": "Draft only: target application host and database with isolated test connectivity.",
+    "validation_criteria": "Plan a connectivity check and a sample-record consistency check; neither has run.",
+    "operations": "Draft owner handover with monitoring, backup and recovery instructions pending practitioner input."
+  },
+  "lane_inputs": {
+    "infrastructure": {"inventory": "Invented host alpha; memory and processor sizing pending."},
+    "database": {"inventory": "Invented database beta; volume, consistency and recovery objectives pending."}
+  },
+  "sources": []
+}
